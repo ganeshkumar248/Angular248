@@ -1,0 +1,26 @@
+<table border="2px">
+    <th>Employee Id</th>
+    <th>Employee Name</th>
+    <th>Employee Job</th>
+    <th>Employee Salary</th>
+    <th>Employee Department</th>
+    
+    <tr>
+        <td>{{empId}}</td>
+        <td>{{empName}}</td>
+        <td>{{empJob}}</td>
+        <td>{{empSal}}</td>
+        <td>{{empDepo}}</td>
+        
+    </tr>
+</table>
+
+<hr />
+
+<h3>Iterate using *ngFor</h3>
+
+<p>*ngFor is used to iterate a list in the template</p>
+
+<div *ngFor = "let username of listOfNames">
+    <p>{{username}}</p>
+</div>
