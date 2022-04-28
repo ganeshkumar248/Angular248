@@ -1,0 +1,35 @@
+<h3>Department List</h3>
+
+<input type="text" [(ngModel)] = "deptno" placeholder="DeptNo" />
+<input type="text" [(ngModel)] = "dname" placeholder="DeptName" />
+<input type="text" [(ngModel)] = "loc" placeholder="DeptLoc" />
+<hr/>
+<button (click)="addDept_click()">Add Dept</button>
+<button (click)="update_click(deptno)">Update Dept</button>
+<hr/>
+<table border="2" width="400" cellSpacing="0" cellPadding="5">
+    <tr>
+        <th>Dept Number</th>
+        <th>Dept Name</th>
+        <th>Dept Location</th>
+        <th></th>
+    </tr>
+
+    <tr *ngFor="let dept of deptsArray">
+        <td>{{dept.deptno}}</td>
+        <td>{{dept.dname}}</td>
+        <td>{{dept.loc}}</td>
+        <td>
+            <a (click)="delete_click(dept.deptno)" href="javascript:void(0);">
+                <img src="assets/images/delete.png" alt="" width="20" />
+            </a>
+            <a (click)="select_click(dept.deptno)" href="javascript:void(0);">
+                <img src="assets/images/choose.png" alt="" width="20" />
+            </a>
+        
+        </td>
+    </tr>
+    <tr *ngIf="deptsArray.length == 0">
+        <td colspan="4">**No Departments available in this database</td>
+    </tr>
+</table>

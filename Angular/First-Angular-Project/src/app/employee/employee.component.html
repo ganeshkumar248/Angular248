@@ -24,3 +24,9 @@
 <div *ngFor = "let username of listOfNames">
     <p>{{username}}</p>
 </div>
+
+<h3>Another way is with using index</h3>
+
+<div *ngFor = "let username of listOfNames;let i=index">
+    <p>{{listOfNames[i]}}</p>
+</div>
