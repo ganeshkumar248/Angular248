@@ -1,0 +1,9 @@
+<button [disabled]="isDisabled"  (click) = "loadMore_click()">Load More</button><hr />
+<div *ngFor="let product of productArray | slice: start: end" >
+    <div class="card">
+        <h4><b>{{product.name}}</b></h4>
+    <p>{{product.category}}</p>
+    <p>Price :{{product.price}} </p>
+    <p>Qty : {{product.qty}} </p>
+    </div>
+</div>
