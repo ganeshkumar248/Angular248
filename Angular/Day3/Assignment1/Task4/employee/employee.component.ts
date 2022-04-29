@@ -14,8 +14,6 @@ export class EmployeeComponent implements OnInit, OnChanges {
   filterValue1: number = 0;
   filterValue2: number = 0;
 
-  filteredEmployess: Employee[] = [];
-
   employeeArray: Employee[] = [
     { empId: 241, empName: "Sai", empJob: "Tester", empSal: 25000, empDepo: 10 },
     { empId: 248, empName: "Ganesh", empJob: "Developer", empSal: 75000, empDepo: 20 },
