@@ -1,0 +1,30 @@
+
+Filter Salary: 
+ MinValue : <input [(ngModel)]="filterValue1"/>
+ MaxValue : <input [(ngModel)]="filterValue2"/>
+ <hr />
+
+ <button (click)="filterData_click()">Filter Data</button>
+<hr />
+<h3>Employee List</h3>
+<table border="2x" width="600" cellSpacing="0" cellPadding="5">
+    <tr>
+        <th>Employee Id</th>
+        <th>Employee Name</th>
+        <th>Employee Job</th>
+        <th>Employee Salary</th>
+        <th>Employee DeptNo</th>
+    </tr>
+
+    <tr *ngFor="let employee of employeeArray | empSalRange: value1: value2 ">
+        <td>{{employee.empId}}</td>
+        <td>{{employee.empName | titlecase}}</td>
+        <td>{{employee.empJob | uppercase}}</td>
+        <td>{{employee.empSal}}</td>
+        <td>{{employee.empDepo}}</td>
+    </tr>
+
+    <tr *ngIf="employeeArray.length == 0">
+        <h1>No departments available in selected locations.</h1>
+    </tr>
+</table>
