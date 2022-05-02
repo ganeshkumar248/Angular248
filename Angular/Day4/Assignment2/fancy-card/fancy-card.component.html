@@ -1,0 +1,12 @@
+<div class="fancy">
+    <div class="fancy-padding">
+        <ng-content select="[top]"></ng-content>
+
+        <div>
+            <p>This is the fancy-card component</p>
+            <ng-content></ng-content>
+        </div>
+
+        <ng-content select="[bottom]"></ng-content>
+    </div>
+</div>

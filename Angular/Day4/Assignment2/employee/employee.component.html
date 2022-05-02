@@ -1,0 +1,43 @@
+<!-- <hr />
+<h3>Add Employee</h3>
+<hr />
+    <div>
+        Emp ID: <input [(ngModel)]="empId" />
+        Emp Name: <input [(ngModel)]="empName" />
+        Emp Job: <input [(ngModel)]="empJob" />
+        Emp Salary: <input [(ngModel)]="empSal" />
+        Emp DeptNo: <input [(ngModel)]="empDepo" />
+        <hr />
+        <button class="button" (click)="addEmployee_click()">Add Employee</button>
+    </div>
+ -->
+
+<hr />
+<h3>Employee List</h3>
+<table border="2x" width="600" cellSpacing="0" cellPadding="5">
+    <tr bgcolor="lightgreen">
+        <th>Employee Id</th>
+        <th>Employee Name</th>
+        <th>Employee Job</th>
+        <th>Employee Salary</th>
+        <th>Employee DeptNo</th>
+        <th>Actions</th>
+    </tr>
+
+    <tr *ngFor="let employee of employeeArray">
+        <td>{{employee.empId}}</td>
+        <td>{{employee.empName | titlecase}}</td>
+        <td>{{employee.empJob | uppercase}}</td>
+        <td>{{employee.empSal}}</td>
+        <td>{{employee.empDepo}}</td>
+        <td>
+            <a (click)="delete_employee(employee.empId)" href="javascript:void(0);">
+                <img src="/assets/images/delete.png" width="20" >
+            </a>
+        </td>
+    </tr>
+
+    <tr *ngIf="employeeArray.length == 0">
+        <h1>No departments available in selected locations.</h1>
+    </tr>
+</table>
