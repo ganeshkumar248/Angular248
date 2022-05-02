@@ -25,8 +25,8 @@ export class ProductListComponent implements OnInit {
     { id: 304, name: "Samsung", price: 3500, category: "Camera", qty: 4, picture: "assets/images/camera-image.png" },
   ]
 
-  values: any[] = [{ 'value': 'Table', 'img': '../../assets/images/table-image.png' },
-
+  values: any[] = [
+   { 'value': 'Table', 'img': '../../assets/images/table-image.png' },
   { 'value': 'List', 'img': '../../assets/images/list-image.png' },
   { 'value': 'largeImage', 'img': '../../assets/images/large.png' },
   { 'value': 'smallImage', 'img': '../../assets/images/small.png' },
