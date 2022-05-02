@@ -34,6 +34,7 @@
 <hr />
 
 <section [ngSwitch]="displayMode">
+    <!--  This is for list view-->
     <article *ngSwitchCase=" 'List' ">
         <div *ngFor="let product of productArray">
             Product: <span style="color: #003c80">{{product.name}}</span>
@@ -41,6 +42,7 @@
         </div>
     </article>
 
+    <!--  This is for table view -->
     <article *ngSwitchCase=" 'Table' ">
         <table border="2x" width="400" [cellPadding]="5" [cellSpacing]="0">
             <tr class="bg1">
@@ -58,6 +60,8 @@
             </tr>
         </table>
     </article>
+    
+    <!--  This is for small image view-->
     <article *ngSwitchCase=" 'smallImage' ">
         <div *ngFor="let product of productArray">
             <div class="card">
@@ -69,6 +73,7 @@
         </div>
     </article>
 
+<!--  This is for large image view-->
     <article *ngSwitchCase=" 'largeImage' ">
         <div *ngFor="let product of productArray">
             <div class="card">
