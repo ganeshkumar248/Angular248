@@ -1,0 +1,48 @@
+<!-- <h3>Add Student</h3> -->
+<!-- <input type="number" [(ngModel)] = "sid" placeholder="Student Id" /> -->
+<!-- <input type="text" [(ngModel)]="sname" placeholder="Student Name" />
+<input type="text" [(ngModel)] ="sdept" placeholder="Student Branch" />
+<input type="text" [(ngModel)] = "sloc" placeholder="Student Location" />
+<hr/>
+
+<button (click)="getAllStudents()">Get Students</button>
+<button (click)="add_student()">Add Student</button>
+<button (click)="update_student(sid)">Update Student</button>
+<button (click)="handleClear()">Clear Fileds</button>
+<hr/>
+
+<h3>Student List</h3>
+<table border="2x" width="600" cellSpacing="0" cellPadding="5">
+    <tr>
+        <th>Student Id</th>
+        <th>Student Name</th>
+        <th>Student Branch</th>
+        <th>Student Location</th> 
+        <th>Actions</th>
+    </tr>
+
+    <tr *ngFor="let student of studentArray">
+        <td>{{student.sid}}</td>
+        <td>{{student.sname}}</td>
+        <td>{{student.sdept}}</td>
+        <td>{{student.sloc}}</td>
+        <td>
+            <a (click)="delete_student(student.sid)" href="javascript:void(0);">
+                <img src="assets/images/delete.png" alt="" width="20" />
+            </a>
+            <a (click)="select_student(student.sid)" href="javascript:void(0);">
+                <img src="assets/images/choose.png" alt="" width="20" />
+            </a>
+        </td>
+    </tr>
+</table> -->
+
+<h3>Customizing the http response using RxJS operators</h3>
+<hr/>
+
+<button style="background: green; color: aliceblue;"    (click)="getData1_click()">Get Students By City</button>
+<button style="background: green; color: aliceblue;" (click)="getData2_click()">Get Students Names</button>
+<button style="background: green; color: aliceblue;" (click)="getData3_click()">Get All Students Excluding EEE </button>
+<hr/>
+
+{{result | json}}
