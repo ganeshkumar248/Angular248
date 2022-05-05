@@ -1,0 +1,23 @@
+<h3 style="text-align: center;">
+    Todo Input</h3>
+<div class="todo-input">
+    <input type="text" placeholder="New Todo" [(ngModel)]="newTodo" /><br /><br/>
+    <button style="background: green; color: aliceblue;" (click)="addNewTodo()">Add New Todo</button>
+</div>
+
+<h3 style="text-align: center;">Todo List</h3>
+
+<div class="card" *ngFor="let item of todoList" [ngClass]="{'checked': item.IsChecked == true}">
+    <span>{{item.Todo}}</span>
+    <img src="assets/images/delete.png" width="20" height="20" style="float: right;" (click)="deleteTodo(item.Todo)">
+    <input type="checkbox" style="float: right;" [checked]="item.IsChecked" (change)="onCheckboxChange(item.Todo)" />
+</div>
+
+<div>
+    <span>
+        <button style="background: red; color: white; 
+        width: 40%; margin: 15px;" (click)="deleteDoneTodos()">Delete done tasks</button>
+        <button style="background: red; color: white; 
+        width: 40%; margin: 15px;" (click)="deleteAllTodos()">Delete all tasks</button>
+    </span>
+</div>
