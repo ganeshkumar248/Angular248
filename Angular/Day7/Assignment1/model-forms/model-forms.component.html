@@ -1,0 +1,72 @@
+<style>
+    .error {
+        color: Red;
+    }
+</style>
+
+<h3> Angular Form Validations using Model Driven </h3>
+<hr />
+
+<form [formGroup]="customerForm" (submit)="submit_click()">
+    <fieldset>
+        <legend>Vehicle Registration Form</legend>
+
+        Owner Name:
+        <input type="text" formControlName="ownerName" />
+        <span *ngIf="customerForm.controls['ownerName'].invalid && customerForm.controls['ownerName'].dirty"
+            class="error">Owner Name is required</span>
+
+        <br /><br />
+
+        Contact Number:
+        <input type="number" formControlName="contactNumber" />
+        <span *ngIf="customerForm.controls['contactNumber'].invalid && customerForm.controls['contactNumber'].dirty"
+            class="error">
+            Enter proper conatct Number</span>
+        <br /><br />
+
+
+        Owner Email : <input type="text" formControlName="ownerEmail" />
+        <span class="error" *ngIf="customerForm.controls['ownerEmail'].invalid && customerForm.controls['ownerEmail'].dirty">
+            Owner email is required
+        </span>
+        <br><br>
+
+        Vehicle Registration Number :
+        <input type="text" formControlName="vehicleRegNumber" />
+        <span class="error" *ngIf="customerForm.controls['vehicleRegNumber'].invalid && customerForm.controls['vehicleRegNumber'].dirty">
+            Enter proper registration number
+        </span>
+        <br><br>
+
+        Address :
+        <input type="text" formControlName="address" />
+        <span class="error" *ngIf="customerForm.controls['address'].invalid && customerForm.controls['address'].dirty">
+            
+        </span>
+        <br><br>
+
+        Model :
+        <input type="text" formControlName="model" />
+        <span class="error" *ngIf="customerForm.controls['model'].invalid && customerForm.controls['model'].dirty">
+            Enter proper model
+        </span>
+        <br><br>
+
+        Color :
+        <input type="text" formControlName="color" />
+        <span class="error" *ngIf="customerForm.controls['color'].invalid && customerForm.controls['color'].dirty">
+            
+        </span>
+        <br><br>
+
+        Year :
+        <input type="number" formControlName="year" />
+        <span class="error" *ngIf="customerForm.controls['year'].invalid && customerForm.controls['year'].dirty">
+            Enter proper year
+        </span>
+        <br><br>
+
+        <button [disabled]="customerForm.invalid">Register</button>
+    </fieldset>
+</form>
