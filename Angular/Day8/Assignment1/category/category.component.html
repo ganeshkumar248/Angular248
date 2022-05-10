@@ -1,0 +1,6 @@
+<h3>Category List</h3><hr />
+
+<div *ngFor="let item of categoryList">
+    <a [routerLink]="['/product-list/', item.name]" >{{item.name}}</a>
+</div>
+<hr />
