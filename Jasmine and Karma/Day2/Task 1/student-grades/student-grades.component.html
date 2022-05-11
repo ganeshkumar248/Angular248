@@ -1,0 +1,15 @@
+<h3>Student Grades List</h3>
+
+<table border="2x" width="400" cellSpacing="0" cellPadding="5" >
+    <tr style="background-color: lightyellow;">
+        <th>Student Id</th>
+        <th>Student Name</th>
+        <th>Student Grades</th>
+    </tr>
+
+    <tr *ngFor="let student of studentGradesArray" bgcolor="lightgreen" >
+        <td>{{student.sid}}</td>
+        <td>{{student.sname}}</td>
+        <td>{{student.sgrade | gradepipe}}</td>
+    </tr>
+</table>
