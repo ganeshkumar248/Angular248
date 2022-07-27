@@ -1,0 +1,67 @@
+<mat-card class="card">
+  <div class="container" color="accent">
+    <form [formGroup]="form" (ngSubmit)="saveDetails(form)">
+      <h3 style="text-decoration: underline;"><strong>Register - Hospital - User</strong></h3>
+      <div style="margin-top:10px;">
+        <div style="margin-right:3%; color:#6b6b6b;">
+          <mat-label>Title Case</mat-label>
+        </div>
+        <mat-radio-group formControlName="titlecase">
+          <mat-radio-button value="Mr">Mr &nbsp;</mat-radio-button>
+          <mat-radio-button value="Mrs">Mrs</mat-radio-button>
+        </mat-radio-group>
+      </div><br />
+
+      <mat-form-field>
+        <mat-label>First Name</mat-label>
+        <input matInput required="true" />
+      </mat-form-field><br />
+      <mat-form-field>
+        <mat-label>Last Name</mat-label>
+        <input matInput required="true" />
+      </mat-form-field>
+      <br />
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Email</mat-label>
+        <input type="email" matInput type="email" formControlName="email" placeholder="Ex. pat@example.com">
+        <mat-icon matSuffix>mail_outline</mat-icon>
+        <!-- <mat-hint>Input the fully qualified email address</mat-hint> -->
+        <mat-error *ngIf="form.controls['email'].errors?.['required']">Email is required</mat-error>
+        <mat-error *ngIf="form.controls['email'].errors?.['pattern']">Please enter valid email</mat-error>
+      </mat-form-field>
+      <br />
+
+      <div>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Date of Birth</mat-label>
+          <input matInput [matDatepicker]="picker">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matSuffix [for]="picker">
+            <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+          </mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <br />
+      <mat-form-field appearance="fill">
+        <mat-label>Select Role</mat-label>
+        <mat-select [(ngModel)]="selectedValue" name="food">
+          <mat-option *ngFor="let role of roles" [value]="role.value">
+            {{role.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br />
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Employee ID</mat-label>
+        <input matInput placeholder="CTGH123">
+      </mat-form-field> <br />
+      <div mat-dialog-actions>
+        <button mat-raised-button color="accent" type="submit">Submit</button>
+      </div>
+      
+    </form>
+    <div>{{ form.value | json }}</div>
+  </div>
+</mat-card>

@@ -1,0 +1,67 @@
+<mat-card class="card">
+<h3 style="text-decoration: underline;"><strong>Register - Patient</strong></h3>
+
+<mat-radio-group aria-label="Select an option">
+    <mat-radio-button value="1">Mr &nbsp;&nbsp;</mat-radio-button>
+    <mat-radio-button value="2">Mrs</mat-radio-button>
+</mat-radio-group><br />
+
+<mat-form-field>
+    <mat-label>First Name</mat-label>
+    <input matInput required="true" />
+</mat-form-field><br />
+
+<mat-form-field>
+    <mat-label>Last Name</mat-label>
+    <input matInput required="true" />
+</mat-form-field>
+<br />
+
+<mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Email</mat-label>
+    <input type="email" matInput type="email" formControlName="email" placeholder="Ex. pat@example.com">
+    <mat-icon matSuffix>mail_outline</mat-icon>
+    <!-- <mat-hint>Input the fully qualified email address</mat-hint> -->
+    <mat-error *ngIf="form.controls['email'].errors?.['required']">Email is required</mat-error>
+    <mat-error *ngIf="form.controls['email'].errors?.['pattern']">Please enter valid email</mat-error>
+</mat-form-field>
+<br />
+
+<div>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Date of Birth</mat-label>
+        <input matInput [matDatepicker]="picker">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker">
+            <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+        </mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+</div>
+<br />
+
+<mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Telephone</mat-label>
+    <span matPrefix>+91 &nbsp;</span>
+    <input type="tel" matInput placeholder="733-061-1234">
+    <mat-icon matSuffix>mode_edit</mat-icon>
+</mat-form-field><br />
+
+<mat-form-field class="form-element">
+    <input matInput required="true" placeholder="Password" >
+    <!-- <mat-hint>Choose a password of at least eight characters, one uppercase letter and one number</mat-hint> -->
+    <!-- <mat-error *ngIf="!formGroup.controls['password'].valid && formGroup.controls['password'].touched">
+      Error 
+    </mat-error> -->
+  </mat-form-field><br />
+
+  <mat-form-field class="form-element">
+    <input matInput required="true" placeholder="Confirm Password">
+    <!-- <mat-hint>Choose a password of at least eight characters, one uppercase letter and one number</mat-hint> -->
+    <!-- <mat-error *ngIf="!formGroup.controls['confirmPassword'].valid && formGroup.controls['confirmPassword'].touched">
+      Error 
+    </mat-error> -->
+  </mat-form-field>
+  <br />
+  <button mat-raised-button color="primary">Login</button>
+</mat-card>

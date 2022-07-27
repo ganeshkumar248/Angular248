@@ -1,0 +1,48 @@
+
+  <mat-card class="card">
+    <h3 style="text-decoration: underline;"><strong>Login</strong></h3>
+    <mat-form-field>
+      <mat-label>username</mat-label>
+      <input matInput [(ngModel)]="username" required="true" />
+    </mat-form-field>
+    <br />
+    <mat-form-field>
+      <mat-label>password</mat-label>
+      <input matInput [(ngModel)]="password" required="true"/>
+    </mat-form-field>
+    <br />
+    <button mat-raised-button color="primary" (click)="login_submit()">Login</button><br /><br />
+
+    <a routerLink="/">Forgot/Change Password</a>
+    </mat-card>
+
+
+  <mat-card class="card">
+    <h3 style="text-decoration: underline;"><strong>Change Password Screen</strong></h3>
+    <mat-form-field class="form-element">
+      <mat-label>Old Password</mat-label>
+      <input matInput required="true" >
+    </mat-form-field><br />
+    <mat-form-field>
+      <mat-label>New Password</mat-label>
+      <input matInput required="true"/>
+    </mat-form-field>
+    <br />
+    <mat-form-field>
+      <mat-label>Confirm New Password</mat-label>
+      <input matInput required="true"/>
+    </mat-form-field>
+    <br />
+    <button mat-raised-button color="primary">Submit</button><br />
+    </mat-card>
+
+
+    <mat-card>
+      <a routerLink="/">Forgot Password</a>
+    </mat-card>
+
+    <mat-card >
+      <a routerLink="/">Change Password</a>
+    </mat-card>
+
+ 
